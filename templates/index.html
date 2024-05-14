@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/style.css">  
+    <title>Network intrusion Detection</title>
+  </head>
+  
+  <body>
+    
+<div class="container main">
+  <div class="jumbotron" id="holder" >
+     <br>
+       <center><b><h2 style="color:blue";>{{ prediction_text}}</h2></b></center> 
+     <br>
+     <br>
+    <center><h1 class='main_heading'>Network Intrusion Detection</h1></center>
+    
+    <br>
+    <div class="instructions">
+      <h2>Instructions: </h2>
+      <p>1. Please enter the values for the following fields</p>
+      <p>2. Click predict </p>
+    </div>
+
+    <form class="form-horizontal" action="{{ url_for('predict')}}"method="post">
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type= "text" name="Dst_Port" placeholder="Dst Port" required="required" />
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type= "text" name="Protocol" placeholder="Protocol" required="required" />
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="Flow_Duration" placeholder="Flow Duration" required="required" />
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+          <div class="col-sm-10">
+          <input  class="form-control" type="text" name="Subflow_Bwd_Byts" placeholder="Subflow Bwd Byts" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+          <div class="col-sm-10">
+          <input  class="form-control" type="text" name="Idle_Std" placeholder="Idle Std" required="required" />
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="Subflow_Fwd_Pkts" placeholder="Subflow Fwd Pkts" required="required" />
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="Bwd_Pkts" placeholder="Bwd Pkts" required="required" />
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="Flow_Byts" placeholder="Flow Byts" required="required" />
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <center><button class="button btn btn-default" type="submit">PREDICT</button></center>
+        </div>
+      </div>
+    </form>
+
+    
+
+    <h2 class="result"></h2>
+  </div>
+  </div>
+
+  </body>
+</html>
+
